@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  cronofy-demo:
+    build: .
+    image: cronofy-demo:latest
+    ports:
+      - mode: ingress
+        target: 7070
+    environment:
+      - NODE_ENV=production
+      - PORT=7070
+    volumes:
+      - ./app:/usr/src/cronofy-demo/app
+      - ./node_modules:/usr/src/cronofy-demo/node_modules
